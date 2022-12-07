@@ -11,7 +11,7 @@ data = open("aoc_day6_input.txt", "r")
 
 line = data.readline()
 line = data.readline()
-line = data.readline()
+line = data.readline().replace('\n', '')
 root = Node("root", parent=None, size=0, dir=True)
 nodes = [root]
 current = root
@@ -31,7 +31,7 @@ while line:
         while tmp.parent is not None:
             tmp = tmp.parent
             tmp.size += int(words[0])
-    line = data.readline()
+    line = data.readline().replace('\n', '')
 
 print(RenderTree(root))
 
